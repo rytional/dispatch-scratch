@@ -1,1 +1,16 @@
 __pycache__/
+
+# Sandbox placeholders: Dispatch's sandbox mounts /dev/null over these paths in
+# the working tree. They are character devices, not files, and make `git add -A` fail.
+/.bash_profile
+/.bashrc
+/.gitconfig
+/.github
+/.idea
+/.mcp.json
+/.profile
+/.ripgreprc
+/.vscode
+/.zprofile
+/.zshrc
+/scripts
