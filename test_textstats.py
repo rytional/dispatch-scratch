@@ -14,6 +14,11 @@ class TextStatsTest(unittest.TestCase):
         self.assertEqual(result["unique_words"], 3)
         self.assertEqual(result["top_words"], [("a", 3), ("b", 2)])
 
+    def test_min_length_filters_short_words(self):
+        result = stats("a is the dispatch test", top=5, min_length=4)
+        self.assertEqual(result["words"], 2)
+        self.assertEqual(result["top_words"], [("dispatch", 1), ("test", 1)])
+
     def test_empty_text(self):
         result = stats("")
         self.assertEqual(result["words"], 0)

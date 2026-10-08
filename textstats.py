@@ -1,7 +1,7 @@
 """Tiny text statistics CLI used to exercise Dispatch (diffs, test runs, command output).
 
 Usage:
-    python3 textstats.py FILE [--top N]
+    python3 textstats.py FILE [--top N] [--min-length N]
     echo "some text" | python3 textstats.py - --top 3
 """
 
@@ -13,14 +13,14 @@ from collections import Counter
 WORD_RE = re.compile(r"[A-Za-z0-9']+")
 
 
-def words(text):
-    """Return lowercase words found in text."""
-    return [w.lower() for w in WORD_RE.findall(text)]
+def words(text, min_length=1):
+    """Return lowercase words found in text that are at least min_length long."""
+    return [w.lower() for w in WORD_RE.findall(text) if len(w) >= min_length]
 
 
-def stats(text, top=5):
+def stats(text, top=5, min_length=1):
     """Return a dict of basic statistics for text."""
-    ws = words(text)
+    ws = words(text, min_length)
     return {
         "lines": len(text.splitlines()),
         "words": len(ws),
@@ -47,6 +47,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("file", help="path to a text file, or - for stdin")
     parser.add_argument("--top", type=int, default=5, help="number of top words to show")
+    parser.add_argument("--min-length", type=int, default=1, help="ignore words shorter than this")
     args = parser.parse_args(argv)
 
     if args.file == "-":
@@ -55,7 +56,7 @@ def main(argv=None):
         with open(args.file, encoding="utf-8") as f:
             text = f.read()
 
-    print(format_stats(stats(text, args.top)))
+    print(format_stats(stats(text, args.top, args.min_length)))
     return 0
 
 
