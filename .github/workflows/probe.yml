@@ -1,0 +1,22 @@
+name: probe
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  ok:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "all good"
+  fail-on-marker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          if [ -f FAIL_ME ]; then
+            echo "##[error]FAIL_ME marker present"
+            exit 1
+          fi
+          echo "no marker"
