@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Guidelines Test Document</title>
+<style>
+  :root {
+    --dark: #141413;
+    --light: #faf9f5;
+    --mid-gray: #b0aea5;
+    --light-gray: #e8e6dc;
+    --orange: #d97757;
+    --blue: #6a9bcc;
+    --green: #788c5d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--light);
+    color: var(--dark);
+    font-family: Lora, Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  h1, h2, h3, .label, th {
+    font-family: Poppins, Arial, sans-serif;
+  }
+  header {
+    background: var(--dark);
+    color: var(--light);
+    padding: 64px 24px 48px;
+  }
+  header .inner, main { max-width: 760px; margin: 0 auto; }
+  header h1 { font-size: 40px; line-height: 1.15; margin: 0 0 12px; font-weight: 600; }
+  header p { margin: 0; color: var(--mid-gray); }
+  .accent-bar { display: flex; height: 6px; }
+  .accent-bar span { flex: 1; }
+  main { padding: 40px 24px 64px; }
+  h2 { font-size: 26px; font-weight: 600; margin: 48px 0 12px; }
+  h3 { font-size: 19px; font-weight: 600; margin: 28px 0 8px; }
+  a { color: var(--orange); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+  .swatch { border: 1px solid var(--light-gray); border-radius: 10px; overflow: hidden; background: #fff; }
+  .swatch .chip { height: 72px; }
+  .swatch .meta { padding: 10px 12px; font-size: 14px; }
+  .swatch .label { font-weight: 600; display: block; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
+  .callout {
+    background: var(--light-gray);
+    border-left: 4px solid var(--orange);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .card { border-radius: 10px; padding: 20px; color: var(--light); }
+  .card h3 { margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  th { text-align: left; font-weight: 600; background: var(--dark); color: var(--light); padding: 10px 12px; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--light-gray); }
+  tr:nth-child(even) td { background: #f3f1ea; }
+  .btn {
+    display: inline-block; font-family: Poppins, Arial, sans-serif; font-weight: 600;
+    padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-right: 8px;
+  }
+  .btn-primary { background: var(--orange); color: var(--light); }
+  .btn-secondary { border: 2px solid var(--dark); color: var(--dark); }
+  footer {
+    border-top: 1px solid var(--light-gray);
+    color: var(--mid-gray); font-size: 14px; text-align: center; padding: 24px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Brand Guidelines Test Document</h1>
+    <p>A sample page for checking colors, type, and components &middot; October 15, 2026</p>
+  </div>
+</header>
+<div class="accent-bar">
+  <span style="background: var(--orange)"></span>
+  <span style="background: var(--blue)"></span>
+  <span style="background: var(--green)"></span>
+</div>
+
+<main>
+  <p>This document puts the brand palette and type pairing to work on a single page.
+  Headings are set in Poppins (falling back to Arial) and body copy in Lora (falling
+  back to Georgia). If those fonts aren't installed, the fallbacks will show instead.</p>
+
+  <h2>Color palette</h2>
+  <h3>Main colors</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#141413"></div><div class="meta"><span class="label">Dark</span><code>#141413</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#faf9f5; border-bottom:1px solid #e8e6dc"></div><div class="meta"><span class="label">Light</span><code>#faf9f5</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#b0aea5"></div><div class="meta"><span class="label">Mid Gray</span><code>#b0aea5</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#e8e6dc"></div><div class="meta"><span class="label">Light Gray</span><code>#e8e6dc</code></div></div>
+  </div>
+  <h3>Accent colors</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#d97757"></div><div class="meta"><span class="label">Orange (primary)</span><code>#d97757</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#6a9bcc"></div><div class="meta"><span class="label">Blue (secondary)</span><code>#6a9bcc</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#788c5d"></div><div class="meta"><span class="label">Green (tertiary)</span><code>#788c5d</code></div></div>
+  </div>
+
+  <h2>Typography</h2>
+  <h3>Heading sample: The quick brown fox</h3>
+  <p>Body sample: the quick brown fox jumps over the lazy dog. Lora is the body
+  face; it's meant for long reading, with <em>italics</em>, <strong>bold</strong>,
+  and <a href="#">inline links</a> in the primary orange accent.</p>
+
+  <div class="callout">
+    <strong>Callout:</strong> Light Gray backgrounds with an orange rule mark
+    notes and tips without pulling focus from the main text.
+  </div>
+
+  <h2>Accent cards</h2>
+  <p>Non-text shapes rotate through orange, blue, and green.</p>
+  <div class="cards">
+    <div class="card" style="background: var(--orange)"><h3>Plan</h3>Set the goal and scope.</div>
+    <div class="card" style="background: var(--blue)"><h3>Build</h3>Make the smallest working version.</div>
+    <div class="card" style="background: var(--green)"><h3>Ship</h3>Review it, then release it.</div>
+  </div>
+
+  <h2>Table</h2>
+  <table>
+    <thead><tr><th>Element</th><th>Font</th><th>Color</th></tr></thead>
+    <tbody>
+      <tr><td>Headings (24pt+)</td><td>Poppins / Arial</td><td>Dark <code>#141413</code></td></tr>
+      <tr><td>Body text</td><td>Lora / Georgia</td><td>Dark <code>#141413</code></td></tr>
+      <tr><td>Secondary text</td><td>Lora / Georgia</td><td>Mid Gray <code>#b0aea5</code></td></tr>
+      <tr><td>Links and primary actions</td><td>Poppins / Arial</td><td>Orange <code>#d97757</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Buttons</h2>
+  <p>
+    <a class="btn btn-primary" href="#">Primary action</a>
+    <a class="btn btn-secondary" href="#">Secondary</a>
+  </p>
+</main>
+
+<footer>Brand guidelines test &middot; dispatch-scratch</footer>
+
+</body>
+</html>
